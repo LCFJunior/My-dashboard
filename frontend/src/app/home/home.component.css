@@ -1,0 +1,192 @@
+/* home.component.css */
+
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(46, 46, 46);
+  z-index: 9999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 3s ease, visibility 3s ease;
+}
+
+#intro.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#intro img {
+  width: 60%;
+  max-width: 600px;
+  animation: fadeOut 3s forwards;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: 1px 1px 5px rgba(0, 255, 255, 0);
+  color: #00ffff;
+  font-family: 'Arial', sans-serif;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#site-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#site-logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+#site-logo span {
+  font-size: 25px;
+    font-weight: bold;
+    color: cyan;
+    text-shadow: 1px 1px 5px rgba(0, 255, 255, 0.5);
+}
+
+#social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+  overflow: hidden;
+  padding-right: 10px;
+}
+
+#social-icons a {
+  position: relative; /* Necessário para o pseudo-elemento */
+}
+
+#social-icons img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#social-icons img:hover {
+  opacity: 0.8;
+}
+
+#social-icons a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 35px;
+  background-color: cyan;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5); /* Centraliza e ajusta o tamanho inicial */
+  border-radius: 40px; 
+  z-index: -1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#social-icons a:hover::after {
+  opacity: 0.3;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../../public/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.login-box {
+  background: rgba(0, 0, 0, 0.459);
+  width: 25%;
+  max-height: 40%; /* Altura máxima inicial */
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border: 1px solid #ffffff;
+}
+
+.login-box.expand {
+  width: 35%;
+  max-height: 500px;
+  opacity: 1;
+  transition: width 3s ease, max-height 3s ease;
+}
+
+.login-box.shrink {
+  width: 25%;
+  max-height: 350px;
+  transition: width 3s ease, max-height 3s ease;
+}
+
+h2 {
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+input {
+  width: 80%;
+  height: 5vh;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-indent: 10px;
+  font-size: 10px;
+}
+
+button {
+  width: 80%;
+  height: 5vh;
+  background: rgba(0, 66, 68, 0.7);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.658);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background: rgba(0, 183, 255, 0.7);
+  transform: scale(1.05);
+}
+
+p {
+  color: #fff;
+  margin-top: 10px;
+}
+
+a {
+  color: #00ffff8f;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #00ffff;
+  transform: scale(1.05);
+}

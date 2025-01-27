@@ -1,0 +1,8 @@
+.content-container {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 96%;
+  background-color: #ff9f9f; /* Escolha a cor de fundo que desejar */
+  padding: 20px;
+  border-radius: 8px; /* Opcional: arredondar os cantos */
+}

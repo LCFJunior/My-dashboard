@@ -1,0 +1,71 @@
+<!-- header.component.html -->
+
+<!-- header -->
+<div id="header">
+  <div id="site-logo">
+    <img src="/moon.png" alt="Logo do site" />
+    <span>My Dashboard</span>
+  </div>
+  <div id="header-icons">
+    <div id="user-profile">
+      <img src="/perfil.png" alt="Foto do usuário" />
+      <span>{{ userName }}</span>
+    </div>
+    <img src="/settings.png" alt="Configurações" title="Configurações" />
+    <img src="/notifications-icon.png" alt="Notificações" title="Notificações" />
+    <img src="/messages-icon.png" alt="Mensagens" title="Mensagens" />
+  </div>
+</div>
+
+<!-- Main Container -->
+<div id="dashboard-container">
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <div class="sidebar-item">
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <img src="/home-icon.png" alt="Ícone Home" />
+        <span>Dashboard</span>
+      </a>
+    </div>
+    <div class="sidebar-item">
+      <a routerLink="/dashboard/projects" routerLinkActive="active">
+        <img src="/projects-icon.png" alt="Ícone Projetos" />
+        <span>Projetos</span>
+        <img src="/arrow-down.png" alt="Expandir" class="expand-icon" />
+      </a>
+    </div>
+    <div class="sidebar-item">
+      <a routerLink="/dashboard/messages" routerLinkActive="active">
+        <img src="/messages-icon.png" alt="Ícone Mensagens" />
+        <span>Mensagens</span>
+        <img src="/arrow-down.png" alt="Expandir" class="expand-icon" />
+      </a>
+    </div>
+    <div class="sidebar-item">
+      <a routerLink="/dashboard/calendar" routerLinkActive="active">
+        <img src="/calendar.png" alt="Ícone Calendário" />
+        <span>Calendário</span>
+        <img src="/arrow-down.png" alt="Expandir" class="expand-icon" />
+      </a>
+    </div>
+    <div class="sidebar-item">
+      <a routerLink="/dashboard/config" routerLinkActive="active">
+        <img src="/settings.png" alt="Ícone Configurações" />
+        <span>Configurações</span>
+        <img src="/arrow-down.png" alt="Expandir" class="expand-icon" />
+      </a>
+    </div>
+    <div class="sidebar-item">
+      <a routerLink="/dashboard/support" routerLinkActive="active">
+        <img src="/support.png" alt="Ícone Suporte" />
+        <span>Suporte</span>
+        <img src="/arrow-down.png" alt="Expandir" class="expand-icon" />
+      </a>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div id="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+<!-- header -->
+<div id="header">
+  <div id="site-logo">
+    <img src="/moon.png" alt="Logo do site" />
+    <span>My Dashboard</span>
+  </div>
+  <div id="social-icons">
+    <a href="https://Github.com/LCFJunior" target="_blank">
+      <img src="/github.png" alt="GitHub" />
+    </a>
+    <a href="https://linkedin.com/in/luiz-carlos-francisco-junior-a81062274/" target="_blank">
+      <img src="/linkedin.png" alt="LinkedIn" />
+    </a>
+  </div>
+</div>
+
+<!-- main -->
+<div id="container">
+  <div
+    class="login-box"
+    [ngClass]="{ expand: isExpanded, shrink: !isExpanded }"
+  >
+    <h2>{{ isExpanded ? 'CADASTRAR' : 'LOGIN' }}</h2>
+    <form (ngSubmit)="onSubmit()">
+      <!-- Campos de login -->
+      <div *ngIf="!isExpanded">
+        <input
+          type="email"
+          placeholder="Email"
+          [(ngModel)]="loginData.email"
+          name="loginEmail"
+          required
+        />
+        <input
+          type="password"
+          placeholder="Senha"
+          [(ngModel)]="loginData.senha"
+          name="loginPassword"
+          required
+        />
+      </div>
+
+      <!-- Campos de cadastro -->
+      <div *ngIf="isExpanded">
+        <input
+          type="text"
+          placeholder="Nome"
+          [(ngModel)]="registerData.nome"
+          name="registerName"
+          required
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          [(ngModel)]="registerData.email"
+          name="registerEmail"
+          required
+        />
+        <input
+          type="password"
+          placeholder="Senha"
+          [(ngModel)]="registerData.senha" 
+          name="registerPassword"
+          required
+        />
+        <input
+          type="password"
+          placeholder="Confirmar Senha"
+          [(ngModel)]="registerData.confirmSenha" 
+          name="registerConfirmPassword"
+          required
+        />
+      </div>
+
+      <button type="submit">{{ isExpanded ? 'Cadastrar' : 'Entrar' }}</button>
+    </form>
+
+    <!-- Link para alternar entre login e cadastro -->
+    <p>
+      Ou
+      <a href="#" (click)="toggleRegister()">{{
+        isExpanded ? 'Voltar para Login' : 'Cadastrar'
+      }}</a>
+    </p>
+  </div>
+</div>
